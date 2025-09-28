@@ -1,7 +1,7 @@
 [project]
 name = "djitter"
 version = "0.1.0"
-description = "Add your description here"
+description = "Yet another blog platform in Django"
 readme = "README.md"
 requires-python = "==3.13.7"
 dependencies = [
