@@ -6,4 +6,4 @@ format:
 	uv run ruff format src
 
 run:
-	uv run python3 manage.py runserver
+	uv run python3 src/manage.py runserver
