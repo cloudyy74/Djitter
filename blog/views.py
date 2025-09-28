@@ -25,4 +25,4 @@ def home(request: HttpRequest) -> HttpResponse:
 
 
 def about(request: HttpRequest) -> HttpResponse:
-    return render(request, 'blog/about.html')
+    return render(request, 'blog/about.html', {'title': 'About'})
