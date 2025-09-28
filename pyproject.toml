@@ -68,6 +68,14 @@ select = [
     "I",
 ]
 
+[tool.pyrefly]
+project-includes = ["**/*"]
+project-excludes = [
+    "**/node_modules",
+    "**/__pycache__",
+    "**/*venv/**/*",
+]
+
 [tool.ruff.format]
 quote-style = "single"
 indent-style = "space"
