@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-&9vr^26174hfl@(g#6=voy_^um0b-8kd+7u#xoge@2(b(l@liu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: list[str] = []
 
 
 # Application definition
@@ -128,7 +128,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 LOGIN_URL = 'users-login'
-
 LOGIN_REDIRECT_URL = 'blog-home'
-
 LOGOUT_REDIRECT_URL = 'blog-home'
+
+MEDIA_ROOT = BASE_DIR.joinpath('media')
+MEDIA_URL = 'media/'
