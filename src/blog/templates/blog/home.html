@@ -2,9 +2,10 @@
 {% block content %}
 {% for post in posts %}
 <article class="d-flex content-section">
+    <img class="rounded-circle article-img" src="{{ post.author.profile.picture.url }}">
     <div class="flex-grow-1">
         <div class="article-metadata">
-            <a class="me-2" href="#">{{ post.author }}</a>
+            <a class="me-2" href="{% url 'users-profile' post.author.username %}">{{ post.author }}</a>
             <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
         </div>
         <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
