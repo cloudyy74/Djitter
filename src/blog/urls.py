@@ -6,11 +6,19 @@ from . import views
 
 
 def root_redirect(request: HttpRequest) -> HttpResponse:
-    return redirect('/home/')
+    return redirect('blog-home')
 
 
 urlpatterns = [
-    path('home/', views.home, name='blog-home'),
+    path('home/', views.PostListView.as_view(), name='blog-home'),
     path('about/', views.about, name='blog-about'),
     path('', root_redirect, name='blog-root'),
+    path('post/<int:pk>/', views.PostDetailView.as_view(), name='blog-post-detail'),
+    path('post/new/', views.PostCreateView.as_view(), name='blog-post-create'),
+    path(
+        'post/<int:pk>/update/', views.PostUpdateView.as_view(), name='blog-post-update'
+    ),
+    path(
+        'post/<int:pk>/delete/', views.PostDeleteView.as_view(), name='blog-post-delete'
+    ),
 ]
