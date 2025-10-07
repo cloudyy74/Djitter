@@ -16,4 +16,5 @@ def create_profile(sender: type[Model], instance: User, created: bool, **kwargs:
 
 @receiver(post_save, sender=User)
 def save_profile(sender: type[Model], instance: User, **kwargs: Any):
-    instance.profile.save()
+    if hasattr(instance, 'profile'):
+        instance.profile.save()
